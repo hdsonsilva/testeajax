@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		 <meta charset="utf-8">
 		<link rel="stylesheet" href="./jquery/jquery-ui-1.8.21.custom/css/ui-lightness/jquery-ui-1.8.21.custom.css">
 		<script type="text/javascript" src="./jquery/jquery.js"></script>
 		<script type="text/javascript" src="./jquery/jquery-ui-1.8.21.custom/js/jquery-ui-1.8.21.custom.min.js"></script>
@@ -9,20 +10,16 @@
 		<script>
 		$(document).ready(function(){
 			$.get(
-			'http://localhost/elastixserver/autenticacao.php',
+			'http://192.168.10.115/elastixserver/autenticacao.php',
 			{	
 				'__user__'	:'admin',
 				'__passwd__':'DoctumFlux2014'
 			},
 			function(valor){
 				alert('ok');
-				
 			},
 			function(e){
-				
-				
 				alert('Erro na conexão.');
-
 			});
 		})
 		</script>
