@@ -10,7 +10,8 @@
 		<script>
 		$(document).ready(function(){
 			$('#clic').click(function(){
-				alert('solicitanod....');
+				alert('solicitando....');
+				
 				$.get(
 					'http://192.168.10.115/elastixserver/autenticacao.php',
 					{	
@@ -19,8 +20,8 @@
 					},
 					function(valor){
 						alert('ok');
-					}).fail(function(){
-						alert('Erro na conexão.');
+					}).always(function(v){
+						alert('Erro na conexão.'+v);
 					});
 
   				alert('passsou batido');	
