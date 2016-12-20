@@ -9,21 +9,23 @@
 	<body>
 		<script>
 		$(document).ready(function(){
-			$.get(
-			'http://192.168.10.115/elastixserver/autenticacao.php',
-			{	
-				'__user__'	:'admin',
-				'__passwd__':'DoctumFlux2014'
-			},
-			function(valor){
-				alert('ok');
-			},
-			function(e){
-				alert('Erro na conexão.');
+			$('#clic').click(function(){
+				$.get(
+					'http://192.168.10.115/elastixserver/autenticacao.php',
+					{	
+						'__user__'	:'admin',
+						'__passwd__':'DoctumFlux2014'
+					},
+					function(valor){
+						alert('ok');
+					},
+					function(e){
+						alert('Erro na conexão.');
+				});
 			});
 		})
 		</script>
-		OKOKOKOK
+		<a id='clic' href='#'>OKOKOKOK</a>
 	</body>
 
 </html>
