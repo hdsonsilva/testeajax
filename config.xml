@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.softhd.callcenter" version="1.0.0" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>
+        testeajax
+    </name>
+    <description>
+        okokokok
+    </description>
+    <author email="contato@softwareshd.com.br" href="http://www.softwareshd.com.br">
+        Softwares HD
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+</widget>
