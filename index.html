@@ -33,7 +33,7 @@
 					function(valor){
 						alert('ok');
 					}).always(function(v){
-						alert('Erro na conexão.'+listarTodasAsPropriedades(v));
+						alert('Erro na conexão.'+v.getResponseHeader);
 					});
 
   				alert('passsou batido');	
