@@ -8,12 +8,24 @@
 	</head>
 	<body>
 		<script>
+		function listarTodasAsPropriedades(o){     
+			var objectoASerInspecionado;     
+			var resultado = [];
+			var stringresultado  ='';
+			
+			for(objectoASerInspecionado = o; objectoASerInspecionado !== null; objectoASerInspecionado = Object.getPrototypeOf(objectoASerInspecionado)){  
+				resultado = resultado.concat(Object.getOwnPropertyNames(objectoASerInspecionado));  
+				resultado.concat("\n");
+			}
+			
+			return resultado; 
+		}
 		$(document).ready(function(){
 			$('#clic').click(function(){
 				alert('solicitando....');
 				
 				$.get(
-					'http://192.168.10.115/elastixserver/autenticacao.php',
+					'http://192.168.10.115/elastixserver/autenticacao.php?__user__=admin&__passwd__=DoctumFlux2014',
 					{	
 						'__user__'	:'admin',
 						'__passwd__':'DoctumFlux2014'
@@ -21,7 +33,7 @@
 					function(valor){
 						alert('ok');
 					}).always(function(v){
-						alert('Erro na conexão.'+v.ERRO);
+						alert('Erro na conexão.'+listarTodasAsPropriedades(v));
 					});
 
   				alert('passsou batido');	
