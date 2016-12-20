@@ -4,7 +4,7 @@
 		 <meta charset="utf-8">
 		<link rel="stylesheet" href="./jquery/jquery-ui-1.8.21.custom/css/ui-lightness/jquery-ui-1.8.21.custom.css">
 		<script type="text/javascript" src="./jquery/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="./jquery/jquery.mobile-1.4.5.js"></script>
+		<script type="text/javascript" src="./jquery/jquery-ui-1.8.21.custom/js/jquery-ui-1.8.21.custom.min.js"></script>
 	</head>
 	<body>
 		<script>
@@ -24,23 +24,29 @@
 			$('#clic').click(function(){
 				alert('solicitando....');
 				
-				$.get(
-					'http://192.168.10.115/elastixserver/autenticacao.php?__user__=admin&__passwd__=DoctumFlux2014',
-					{	
-						'__user__'	:'admin',
-						'__passwd__':'DoctumFlux2014'
-					},
-					function(valor){
-						alert('ok');
-					}).always(function(v){
-						alert('Erro na conexão.'+v.getResponseHeader);
+				$.ajax({
+						url: 'http://192.168.10.115/elastixserver/autenticacao.php?__user__=admin&__passwd__=DoctumFlux2014',
+						type: 'GET',
+						data: {
+							'__user__'	:'admin',
+							'__passwd__':'DoctumFlux2014'
+						},
+						crossDomain: true,
+						success:
+						function(valor){
+							alert('ok');
+						},
+						error:
+						 function (jqXHR, textStatus, errorThrown){
+	          				alert(errorThrown);
+	          			}
 					});
 
   				alert('passsou batido');	
 			});
 		})
 		</script>
-		<a id='clic' href='#'>NADA</a>
+		<a id='clic' href='#'>NEW</a>
 	</body>
 
 </html>
